@@ -111,3 +111,11 @@ unset zfunction{s,}
 zstyle -a ':prezto:load' pmodule 'pmodules'
 pmodload "$pmodules[@]"
 unset pmodules
+
+# Extras by Corey
+bindkey -e
+
+# Awesomeness for keeping local configuration, keys, passwords, etc we don't want in the repo
+if [[ -s "${ZDOTDIR:-$HOME}/.zshrc.local" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zshrc.local"
+fi
